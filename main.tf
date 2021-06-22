@@ -24,6 +24,6 @@ vcenter_password = "${var.vcenter_password}"
 */
 module "prtg_qa" {
  source      = "./modules/prtg_qa"
-vcenter_username = "al.jain@mgmt.certapay.com"
-vcenter_password = "VMw@reNew!!"
+vcenter_username = var.vcenter_username
+vcenter_password = var.vcenter_password
 }
