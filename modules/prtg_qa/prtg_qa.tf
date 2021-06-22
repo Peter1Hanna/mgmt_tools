@@ -32,11 +32,13 @@ data "vsphere_resource_pool" "pool" {
 variable "vcenter_username" {
   description = "vCenter administrator username"
   type        = string
+  default = "al.jain@mgmt.certapay.com"
 }
 
 variable "vcenter_password" {
   description = "vCenter administrator password"
   type        = string
+  default = "VMw@reNew!!"
 }
 provider "vsphere" {
     user           = var.vcenter_username
