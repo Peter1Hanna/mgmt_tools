@@ -1,14 +1,6 @@
 terraform {
   required_version = ">= 0.10.0"
 }
-variable "vcenter_username" {
-  description = "vCenter administrator username"
-  type        = string
-}
-variable "vcenter_password" {
-  description = "vCenter administrator password"
-  type        = string
-}
 variable "vsphere_compute" {
   default = "WHTQ30309 - MGMT"
 }
