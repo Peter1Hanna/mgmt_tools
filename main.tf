@@ -3,7 +3,7 @@ variable "user" {
   type        = string
 }
 
-variable "vcenter_password" {
+variable "password" {
   description = "vCenter administrator password"
   type        = string
 }
@@ -11,5 +11,5 @@ variable "vcenter_password" {
 module "prtg_qa" {
   source      = "./modules/prtg_qa"
 user = "al.jain@mgmt.certapay.com"
-vcenter_password = var.vcenter_password
+password = "VMw@reNew!!"
 }
