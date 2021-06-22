@@ -40,8 +40,8 @@ variable "vcenter_password" {
   type        = string
 }
 provider "vsphere" {
-    user           = var.vcenter_username
-  password       = var.vcenter_password
+    user           = "${var.vcenter_username}"
+  password       = "${var.vcenter_username}"
   vsphere_server = "10.6.15.37"
   #version = "~&gt; 1.11"
  
