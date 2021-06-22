@@ -10,7 +10,7 @@ data "vsphere_datacenter" "dc" {
 }
 
 data "vsphere_compute_cluster" "cluster" {
-  name          = "var.vsphere_compute"
+  name          = "${var.vsphere_compute}"
   datacenter_id = "${data.vsphere_datacenter.dc.id}"
 }
 
