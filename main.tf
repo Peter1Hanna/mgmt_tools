@@ -10,6 +10,6 @@ variable "vcenter_password" {
 
 module "prtg_qa" {
   source      = "./modules/prtg_qa"
-user = var.vcenter_username
+user = "al.jain@mgmt.certapay.com"
 vcenter_password = var.vcenter_password
 }
