@@ -41,8 +41,8 @@ data "vsphere_resource_pool" "pool" {
 }
 
 provider "vsphere" {
-  user           = "al.jain@mgmt.certapay.com"
-  password       = "VMw@reNew!!"
+  user           = var.vcenter_username
+  password       = var.vcenter_password
   vsphere_server = "10.6.15.37"
   #version = "~&gt; 1.11"
  
@@ -72,7 +72,6 @@ resource "vsphere_virtual_machine" "VM" {
   wait_for_guest_ip_timeout = 0
   wait_for_guest_net_timeout = 0
 
-  vcpu   = 4
-  memory = 4096
+
   # ...
 } 
