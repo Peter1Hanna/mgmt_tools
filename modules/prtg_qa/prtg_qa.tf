@@ -29,7 +29,7 @@ data "vsphere_resource_pool" "pool" {
   datacenter_id = "${data.vsphere_datacenter.dc.id}"
 }
 
-variable "vcenter_username" {
+variable "user" {
   description = "vCenter administrator username"
   type        = string
   default = "al.jain@mgmt.certapay.com"
