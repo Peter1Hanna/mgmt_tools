@@ -1,4 +1,9 @@
-terraform { required_version = ">= 0.12" required_providers {vsphere = "= 1.15"} }
+terraform { 
+  required_version = ">= 0.12" 
+  required_providers {
+    vsphere = "= 1.15"
+  } 
+}
 
 variable "vcenter_username" {
   description = "vCenter administrator username"
