@@ -35,7 +35,7 @@ variable "user" {
   default = "al.jain@mgmt.certapay.com"
 }
 
-variable "vcenter_password" {
+variable "password" {
   description = "vCenter administrator password"
   type        = string
   default = "VMw@reNew!!"
