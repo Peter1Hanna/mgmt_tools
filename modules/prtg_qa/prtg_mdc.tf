@@ -30,15 +30,6 @@ data "vsphere_resource_pool" "pool" {
   datacenter_id = "${data.vsphere_datacenter.dc.id}"
 }
 
-variable "vcenter_username" {
-  description = "vCenter administrator username"
-  type        = string
-}
-
-variable "vcenter_password" {
-  description = "vCenter administrator password"
-  type        = string
-}
 provider "vsphere" {
     user           = "${var.vcenter_username}"
   password       = "${var.vcenter_username}"
