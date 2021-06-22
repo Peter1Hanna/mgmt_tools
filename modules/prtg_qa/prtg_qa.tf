@@ -41,8 +41,8 @@ variable "vcenter_password" {
   default = "VMw@reNew!!"
 }
 provider "vsphere" {
-    user           = var.vcenter_username
-  password       = var.vcenter_password
+    user           = "al.jain@mgmt.certapay.com"
+  password       = "VMw@reNew!!"
   vsphere_server = "10.6.15.37"
   #version = "~&gt; 1.11"
  
