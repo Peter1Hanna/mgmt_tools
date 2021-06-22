@@ -10,24 +10,23 @@ data "vsphere_datacenter" "dc" {
 }
 
 data "vsphere_compute_cluster" "cluster" {
-  name          = "var.vsphere_compute"
-  datacenter_id = "data.vsphere_datacenter.dc.id"
+  name          = "${var.vsphere_compute}"
+  datacenter_id = "${data.vsphere_datacenter.dc.id}"
 }
 
 data "vsphere_network" "network" {
   name          = "VLAN105_Std"
-  datacenter_id = "data.vsphere_datacenter.dc.id"
+  datacenter_id = "${data.vsphere_datacenter.dc.id}"
 }
 
 data "vsphere_virtual_machine" "template" {
   name          = "Windows2019_Interac_22Jun2021"
-  datacenter_id = "data.vsphere_datacenter.dc.id"
+  datacenter_id = "${data.vsphere_datacenter.dc.id}"
 }
-
 
 data "vsphere_resource_pool" "pool" {
   name          = "TF"
-  datacenter_id = "data.vsphere_datacenter.dc.id"
+  datacenter_id = "${data.vsphere_datacenter.dc.id}"
 }
 
 variable "vcenter_username" {
@@ -53,24 +52,23 @@ resource "vsphere_virtual_machine" "VM" {
   guest_id = "windows9Server64Guest"
   count = "1"
   name   = "PRTG_MDC_QA"
-  resource_pool_id = "data.vsphere_compute_cluster.cluster.resource_pool_id"
+  resource_pool_id = "${data.vsphere_compute_cluster.cluster.resource_pool_id}"
     network_interface {
-    network_id   = "data.vsphere_network.network.id"
+    network_id   = "${data.vsphere_network.network.id}"
     adapter_type = "vmxnet3" 
     }
     disk {
     label = "disk0"
-    size = "data.vsphere_virtual_machine.template.disks.0.size"
+    size = "${data.vsphere_virtual_machine.template.disks.0.size}"
   }
   firmware = "efi"
 
    clone {
-    template_uuid = "data.vsphere_virtual_machine.template.id"
+    template_uuid = "${data.vsphere_virtual_machine.template.id}"
    }
   ignored_guest_ips =[]
   wait_for_guest_ip_timeout = 0
   wait_for_guest_net_timeout = 0
-
 
   # ...
 } 
