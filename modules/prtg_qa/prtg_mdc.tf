@@ -4,12 +4,12 @@ terraform {
 variable "vcenter_username" {
   description = "vCenter administrator username"
   type        = string
-  default = "adminuser"
+  default = "al.jain@mgmt.certapay.com"
 }
 variable "vcenter_password" {
   description = "vCenter administrator password"
   type        = string
-   default = "password1234"
+   default = "VMw@reNew!!"
 }
 variable "vsphere_compute" {
   default = "WHTQ30309 - MGMT"
