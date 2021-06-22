@@ -24,25 +24,24 @@ data "vsphere_virtual_machine" "template" {
   datacenter_id = "${data.vsphere_datacenter.dc.id}"
 }
 
+
 data "vsphere_resource_pool" "pool" {
   name          = "TF"
   datacenter_id = "${data.vsphere_datacenter.dc.id}"
 }
 
-variable "user" {
+variable "vcenter_username" {
   description = "vCenter administrator username"
   type        = string
-  default = "al.jain@mgmt.certapay.com"
 }
 
-variable "password" {
+variable "vcenter_password" {
   description = "vCenter administrator password"
   type        = string
-  default = "VMw@reNew!!"
 }
 provider "vsphere" {
-    user           = "al.jain@mgmt.certapay.com"
-  password       = "VMw@reNew!!"
+    user           = var.vcenter_username
+  password       = var.vcenter_password
   vsphere_server = "10.6.15.37"
   #version = "~&gt; 1.11"
  
