@@ -41,8 +41,8 @@ data "vsphere_resource_pool" "pool" {
 }
 
 provider "vsphere" {
-    user           = "${var.vcenter_username}"
-  password       = "${var.vcenter_username}"
+  user           = var.vcenter_username
+  password       = var.vcenter_username
   vsphere_server = "10.6.15.37"
   #version = "~&gt; 1.11"
  
