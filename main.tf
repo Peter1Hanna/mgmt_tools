@@ -24,6 +24,6 @@ vcenter_password = "${var.vcenter_password}"
 */
 module "prtg_qa" {
  source      = "./modules/prtg_mdc"
- user = "${var.vcenter_username}"
- password = "${var.vcenter_password}"
+vcenter_username = var.vcenter_username
+vcenter_password = var.vcenter_password
 }
