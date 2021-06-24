@@ -52,7 +52,7 @@ provider "vsphere" {
 resource "vsphere_virtual_machine" "VM" {
   guest_id = "windows9Server64Guest"
   count = "1"
-  name   = "PRTG_MDC_QA"
+  name   = "PRTG_MDC_QA_NEW_NAME"
   resource_pool_id = "${data.vsphere_compute_cluster.cluster.resource_pool_id}"
     network_interface {
     network_id   = "${data.vsphere_network.network.id}"
