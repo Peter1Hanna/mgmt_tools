@@ -51,6 +51,7 @@ provider "vsphere" {
 
 resource "vsphere_virtual_machine" "VM" {
   guest_id = "windows9Server64Guest"
+  num_cpus  = 4
   count = "1"
   name   = "PRTG_MDC_QA_NEW_NAME"
   resource_pool_id = "${data.vsphere_compute_cluster.cluster.resource_pool_id}"
