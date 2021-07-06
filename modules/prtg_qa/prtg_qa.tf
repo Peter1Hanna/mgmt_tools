@@ -53,7 +53,7 @@ resource "vsphere_virtual_machine" "VM" {
   guest_id = "windows9Server64Guest"
   num_cpus  = 4
   count = "1"
-  name   = "PRTG_MDC_QA_NEW_NAME"
+  name   = "PRTG_QA_6July_2021"
   resource_pool_id = "${data.vsphere_compute_cluster.cluster.resource_pool_id}"
     network_interface {
     network_id   = "${data.vsphere_network.network.id}"
